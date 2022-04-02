@@ -1,24 +1,29 @@
 package com.github.gagechan.server;
 
+import java.nio.charset.StandardCharsets;
+
+import org.junit.jupiter.api.Test;
 
 import com.github.gagechan.server.annotation.EnableIoc;
 import com.github.gagechan.server.annotation.Route;
 import com.github.gagechan.server.http.AbstractController;
 import com.github.gagechan.server.http.HttpRequest;
 import com.github.gagechan.server.http.HttpResponse;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 
-import java.nio.charset.StandardCharsets;
+import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author : GageChan
- * @version : MainTest.java, v 0.1 2022年04月03 01:31 GageChan
+ * The type Main test.
+ * @author  : GageChan
+ * @version  : MainTest.java, v 0.1 2022年04月03 01:31 GageChan
  */
 @EnableIoc
 @Route(path = "/example")
 @Slf4j
 public class MainTest extends AbstractController {
+    /**
+    * Run.
+    */
     @Test
     void run() {
         Main.run(MainTest.class);

@@ -10,8 +10,9 @@ import io.netty.handler.codec.http.FullHttpRequest;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * The type Route dispatcher.
  * @author GageChan
- * @version : UrlDispatcher.java, v 0.1 2022年04月01 21:32 GageChan
+ * @version  : UrlDispatcher.java, v 0.1 2022年04月01 21:32 GageChan
  */
 @Slf4j
 public class RouteDispatcher extends SimpleChannelInboundHandler<FullHttpRequest> {

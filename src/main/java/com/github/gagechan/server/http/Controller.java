@@ -3,7 +3,7 @@ package com.github.gagechan.server.http;
 /**
  * The interface Controller.
  * @author  : GageChan
- * @version : Controller.java, v 0.1 2022年04月01 20:14 GageChan
+ * @version  : Controller.java, v 0.1 2022年04月01 20:14 GageChan
  */
 public interface Controller {
 

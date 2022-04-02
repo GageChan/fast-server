@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The type Http request.
  * @author  : GageChan
- * @version : HttpRequest.java, v 0.1 2022年04月01 20:14 GageChan
+ * @version  : HttpRequest.java, v 0.1 2022年04月01 20:14 GageChan
  */
 @Slf4j
 public class HttpRequest {
@@ -44,28 +44,28 @@ public class HttpRequest {
     /**
      * The Headers.
      */
-    private final Map<String, String> headers = new HashMap<>();
+    private final Map<String, String> headers    = new HashMap<>();
     /**
      * The Params.
      */
-    private final Map<String, Object> params  = new HashMap<>();
+    private final Map<String, Object> params     = new HashMap<>();
     /**
      * The Cookies.
      */
-    private final Map<String, Cookie> cookies = new HashMap<>();
+    private final Map<String, Cookie> cookies    = new HashMap<>();
 
     /**
      * The Attributes.
      */
     private final Map<String, Object> attributes = new HashMap<>();
 
-    private byte[]              body;
+    private byte[]                    body;
 
     /**
      * Instantiates a new Http request.
      *
      * @param request the request
-     */
+    */
     public HttpRequest(FullHttpRequest request) {
         this.request = request;
         QueryStringDecoder decoder = new QueryStringDecoder(request.uri());
@@ -92,7 +92,8 @@ public class HttpRequest {
     }
 
     private void parsePostParam() {
-        if (this.headers.getOrDefault("Content-Type", HttpResponse.CONTENT_TYPE_HTML).equals(HttpResponse.CONTENT_TYPE_JSON)) {
+        if (this.headers.getOrDefault("Content-Type", HttpResponse.CONTENT_TYPE_HTML)
+            .equals(HttpResponse.CONTENT_TYPE_JSON)) {
             ByteBuf content = request.content();
             body = new byte[content.readableBytes()];
             content.readBytes(body);
@@ -129,15 +130,33 @@ public class HttpRequest {
         }
     }
 
+    /**
+    * Gets attribute.
+    *
+    * @param key the key
+    * @return the attribute
+    */
     public Object getAttribute(String key) {
         return attributes.get(key);
     }
 
+    /**
+    * Add attribute http request.
+    *
+    * @param key the key
+    * @param value the value
+    * @return the http request
+    */
     public HttpRequest addAttribute(String key, Object value) {
         attributes.put(key, value);
         return this;
     }
 
+    /**
+    * Is keep alive boolean.
+    *
+    * @return the boolean
+    */
     public boolean isKeepAlive() {
         final String connectionHeader = getHeader(HttpHeaderNames.CONNECTION.toString());
         // 无论任何版本Connection为close时都关闭连接
@@ -155,6 +174,11 @@ public class HttpRequest {
         return true;
     }
 
+    /**
+    * Gets protocol version.
+    *
+    * @return the protocol version
+    */
     public HttpVersion getProtocolVersion() {
         return request.protocolVersion();
     }
@@ -163,11 +187,16 @@ public class HttpRequest {
      * Gets path.
      *
      * @return the path
-     */
+    */
     public String getPath() {
         return path;
     }
 
+    /**
+    * Get body byte [ ].
+    *
+    * @return the byte [ ]
+    */
     public byte[] getBody() {
         return body;
     }
@@ -175,9 +204,9 @@ public class HttpRequest {
     /**
      * Gets header.
      *
-     * @param key the key 
-     * @return the header
-     */
+     * @param key the key
+    * @return the header
+    */
     public String getHeader(String key) {
         return headers.get(key);
     }
@@ -185,9 +214,9 @@ public class HttpRequest {
     /**
      * Gets params.
      *
-     * @param key the key 
-     * @return the params
-     */
+     * @param key the key
+    * @return the params
+    */
     public Object getParam(String key) {
         return params.get(key);
     }
@@ -195,9 +224,9 @@ public class HttpRequest {
     /**
      * Gets cookie.
      *
-     * @param key the key 
-     * @return the cookie
-     */
+     * @param key the key
+    * @return the cookie
+    */
     public Cookie getCookie(String key) {
         return cookies.get(key);
     }
@@ -206,7 +235,7 @@ public class HttpRequest {
      * Method http method.
      *
      * @return the http method
-     */
+    */
     public HttpMethod method() {
         return method;
     }

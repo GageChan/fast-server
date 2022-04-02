@@ -2,7 +2,6 @@ package com.github.gagechan.server.config;
 
 import static com.github.gagechan.server.misc.Const.APPLICATION_PROPERTIES;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
@@ -15,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
  * The type App config.
  *
  * @author GageChan
- * @version : AppConfig.java, v 0.1 2022年04月01 20:39 GageChan
+ * @version  : AppConfig.java, v 0.1 2022年04月01 20:39 GageChan
  */
 @Slf4j
 public class AppConfig {
@@ -26,7 +25,7 @@ public class AppConfig {
     public static void loadFromClassPath() {
         AppConfigProperties config = BeanContainer.getBean(AppConfigProperties.class);
         Properties properties = new Properties();
-        try (InputStream stream = ResourceUtil.getStream(APPLICATION_PROPERTIES)){
+        try (InputStream stream = ResourceUtil.getStream(APPLICATION_PROPERTIES)) {
             properties.load(stream);
         } catch (Throwable e) {
             // ignore

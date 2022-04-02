@@ -3,9 +3,9 @@ package com.github.gagechan.server.exception;
 /**
  * The type Not support method exception.
  * @author  : GageChan
- * @version : NotSupportMethodException.java, v 0.1 2022年04月01 20:28 GageChan
+ * @version  : NotSupportMethodException.java, v 0.1 2022年04月01 20:28 GageChan
  */
-public class NotSupportMethodException extends RuntimeException{
+public class NotSupportMethodException extends RuntimeException {
 
     /**
     * Instantiates a new Not support method exception.

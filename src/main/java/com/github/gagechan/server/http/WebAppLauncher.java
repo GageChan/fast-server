@@ -18,13 +18,17 @@ import io.netty.handler.codec.http.HttpServerCodec;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * The type Web app launcher.
  * @author GageChan
- * @version : WebAppLauncher.java, v 0.1 2022年04月01 21:31 GageChan
+ * @version  : WebAppLauncher.java, v 0.1 2022年04月01 21:31 GageChan
  */
 @Slf4j
 @Bean
 public class WebAppLauncher implements BeanPostProcess {
 
+    /**
+    * Start.
+    */
     public void start() {
         int port = AppConfigProperties.getInstance().getPort();
         long start = System.currentTimeMillis();
@@ -40,7 +44,8 @@ public class WebAppLauncher implements BeanPostProcess {
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         ch.pipeline().addLast(new HttpServerCodec())
-                            .addLast(new HttpObjectAggregator(65536)).addLast(new RouteDispatcher());
+                            .addLast(new HttpObjectAggregator(65536))
+                            .addLast(new RouteDispatcher());
                     }
                 });
 

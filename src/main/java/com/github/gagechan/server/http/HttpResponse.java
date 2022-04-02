@@ -25,8 +25,8 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The type Http response.
  *
- * @author : GageChan
- * @version : HttpResponse.java, v 0.1 2022年04月01 20:15 GageChan
+ * @author  : GageChan
+ * @version  : HttpResponse.java, v 0.1 2022年04月01 20:15 GageChan
  */
 @Slf4j
 public class HttpResponse {
@@ -47,6 +47,9 @@ public class HttpResponse {
      */
     public final static String          CONTENT_TYPE_JSON = "application/json";
 
+    /**
+    * The Content image.
+    */
     public final static String          CONTENT_IMAGE     = "image/png";
 
     private final ChannelHandlerContext ctx;
@@ -61,9 +64,9 @@ public class HttpResponse {
     /**
      * Instantiates a new Http response.
      *
-     * @param ctx     the ctx
-     * @param request the request
-     */
+     * @param ctx the ctx
+    * @param request the request
+    */
     public HttpResponse(ChannelHandlerContext ctx, HttpRequest request) {
         this.ctx = ctx;
         this.request = request;
@@ -73,7 +76,7 @@ public class HttpResponse {
      * Build json response.
      *
      * @param json the json
-     */
+    */
     public void buildJsonResponse(String json) {
         buildResponse(CONTENT_TYPE_JSON, json);
     }
@@ -82,7 +85,7 @@ public class HttpResponse {
      * Build html response.
      *
      * @param html the html
-     */
+    */
     public void buildHtmlResponse(String html) {
         buildResponse(CONTENT_TYPE_HTML, html);
     }
@@ -91,13 +94,19 @@ public class HttpResponse {
      * Build response.
      *
      * @param contentType the content type
-     * @param data        the data
-     */
+    * @param data the data
+    */
     public void buildResponse(String contentType, String data) {
         this.contentType = contentType;
         this.content = Unpooled.copiedBuffer(data, StandardCharsets.UTF_8);
     }
 
+    /**
+    * Render html http response.
+    *
+    * @param path the path
+    * @return the http response
+    */
     public HttpResponse renderHtml(String path) {
         AppConfigProperties config = AppConfigProperties.getInstance();
         String prefix = config.getTemplatePrefix();
@@ -121,6 +130,12 @@ public class HttpResponse {
         return this;
     }
 
+    /**
+    * Render static http response.
+    *
+    * @param path the path
+    * @return the http response
+    */
     public HttpResponse renderStatic(String path) {
         if (path.startsWith("/")) {
             path = path.substring(1);
@@ -176,9 +191,9 @@ public class HttpResponse {
     /**
      * Add header.
      *
-     * @param name  the name
-     * @param value the value
-     */
+     * @param name the name
+    * @param value the value
+    */
     public void addHeader(String name, Object value) {
         headers.add(name, value);
     }
@@ -197,10 +212,10 @@ public class HttpResponse {
     /**
      * Add cookie http response.
      *
-     * @param name  the name
-     * @param value the value
-     * @return the http response
-     */
+     * @param name the name
+    * @param value the value
+    * @return the http response
+    */
     public HttpResponse addCookie(String name, String value) {
         return addCookie(new DefaultCookie(name, value));
     }
@@ -229,11 +244,11 @@ public class HttpResponse {
     /**
      * Add cookie http response.
      *
-     * @param name            the name
-     * @param value           the value
-     * @param maxAgeInSeconds the max age in seconds
-     * @return the http response
-     */
+     * @param name the name
+    * @param value the value
+    * @param maxAgeInSeconds the max age in seconds
+    * @return the http response
+    */
     public HttpResponse addCookie(String name, String value, int maxAgeInSeconds) {
         return addCookie(name, value, maxAgeInSeconds, "/", null);
     }

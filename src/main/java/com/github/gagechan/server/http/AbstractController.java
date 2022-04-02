@@ -7,7 +7,7 @@ import io.netty.handler.codec.http.HttpMethod;
 /**
  * The type Abstract controller.
  * @author  : GageChan
- * @version : AbstractController.java, v 0.1 2022年04月01 20:17 GageChan
+ * @version  : AbstractController.java, v 0.1 2022年04月01 20:17 GageChan
  */
 public abstract class AbstractController implements Controller {
 

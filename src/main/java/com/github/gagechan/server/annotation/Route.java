@@ -12,9 +12,9 @@ import cn.hutool.core.util.StrUtil;
  * The interface Route.
  *
  * @author GageChan
- * @version : Route.java, v 0.1 2022年04月01 19:44 GageChan
+ * @version  : Route.java, v 0.1 2022年04月01 19:44 GageChan
  */
-@Target({ElementType.TYPE})
+@Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface Route {
@@ -23,7 +23,7 @@ public @interface Route {
      * Path string.
      *
      * @return the string
-     */
+    */
     String path() default StrUtil.EMPTY;
 
 }

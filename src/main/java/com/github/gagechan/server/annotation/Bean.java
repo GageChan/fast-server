@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * The interface Bean.
  *
  * @author GageChan
- * @version : Bean.java, v 0.1 2022年04月01 19:41 GageChan
+ * @version  : Bean.java, v 0.1 2022年04月01 19:41 GageChan
  */
 @Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)

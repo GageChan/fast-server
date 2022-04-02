@@ -3,9 +3,9 @@ package com.github.gagechan.server.exception;
 /**
  * The type No bean container exception.
  * @author  : GageChan
- * @version : NoBeanContainerException.java, v 0.1 2022年04月01 19:49 GageChan
+ * @version  : NoBeanContainerException.java, v 0.1 2022年04月01 19:49 GageChan
  */
-public class NoBeanContainerException extends RuntimeException{
+public class NoBeanContainerException extends RuntimeException {
 
     /**
     * Instantiates a new No bean container exception.

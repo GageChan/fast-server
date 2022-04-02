@@ -3,9 +3,9 @@ package com.github.gagechan.server.exception;
 /**
  * The type No such bean exception.
  * @author  : GageChan
- * @version : NoSuchBeanException.java, v 0.1 2022年04月01 20:45 GageChan
+ * @version  : NoSuchBeanException.java, v 0.1 2022年04月01 20:45 GageChan
  */
-public class NoSuchBeanException extends RuntimeException{
+public class NoSuchBeanException extends RuntimeException {
 
     /**
     * Instantiates a new No such bean exception.

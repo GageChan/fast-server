@@ -12,7 +12,7 @@ import lombok.extern.slf4j.Slf4j;
  * The type App config properties.
  *
  * @author GageChan
- * @version : AppConfigProperties.java, v 0.1 2022年04月01 20:39 GageChan
+ * @version  : AppConfigProperties.java, v 0.1 2022年04月01 20:39 GageChan
  */
 @Data
 @Bean
@@ -21,21 +21,21 @@ public class AppConfigProperties implements InitializedBean {
 
     private Integer port;
 
-    private String applicationName;
+    private String  applicationName;
 
-    private String applicationVersion;
+    private String  applicationVersion;
 
-    private String staticPrefix;
+    private String  staticPrefix;
 
-    private String templatePrefix;
+    private String  templatePrefix;
 
-    private String templateSuffix;
+    private String  templateSuffix;
 
     /**
      * Gets instance.
      *
      * @return the instance
-     */
+    */
     public static AppConfigProperties getInstance() {
         return BeanContainer.getBean(AppConfigProperties.class);
     }

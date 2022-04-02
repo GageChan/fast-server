@@ -24,7 +24,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * The type Bean container.
  * @author  : GageChan
- * @version : BeanContainer.java, v 0.1 2022年04月01 19:45 GageChan
+ * @version  : BeanContainer.java, v 0.1 2022年04月01 19:45 GageChan
  */
 @Slf4j
 public abstract class BeanContainer {
@@ -44,7 +44,7 @@ public abstract class BeanContainer {
     /**
      * Gets bean.
      *
-     * @param <T>   the type parameter
+     * @param <T>    the type parameter
     * @param clazz the clazz
     * @return the bean
     */
@@ -57,7 +57,8 @@ public abstract class BeanContainer {
 
     /**
      * Load.
-     */
+     * @param clazz the clazz
+    */
     public void load(Class<?> clazz) {
         log.info("starting load ioc...");
         Set<Class<?>> mainClasses = ClassUtil.scanPackageByAnnotation(clazz.getName(),

@@ -15,6 +15,8 @@ import lombok.extern.slf4j.Slf4j;
 public class Main {
     /**
      * The entry point of application.
+     *
+     * @param clazz the clazz
      */
     public static void run(Class<?> clazz) {
         BeanContainer container = new UrlContainer();
