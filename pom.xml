@@ -7,7 +7,7 @@
     <groupId>com.github.gagechan</groupId>
     <artifactId>fast-server</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.0.0</version>
 
     <name>FastServer</name>
     <description>一款基于Netty实现的高性能的Web应用服务器</description>
