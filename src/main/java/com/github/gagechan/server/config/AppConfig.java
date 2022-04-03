@@ -37,7 +37,7 @@ public class AppConfig {
     private static void initProperties(Properties properties, AppConfigProperties config) {
         config.setPort(Integer.valueOf(properties.getProperty("web.http.port", "8000")));
         config.setApplicationName(properties.getProperty("application.name", "FastServer"));
-        config.setApplicationVersion(properties.getProperty("application.version", "1.0.0"));
+        config.setApplicationVersion(properties.getProperty("application.version", "1.0.3-RELEASE"));
         config.setStaticPrefix(properties.getProperty("web.http.static.prefix", "static"));
         config.setTemplatePrefix(properties.getProperty("web.http.template.prefix", "template"));
         config.setTemplateSuffix(properties.getProperty("web.http.template.suffix", "html"));

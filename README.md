@@ -8,9 +8,9 @@
 
 ```xml
 <dependency>
-  <groupId>com.github.gagechan</groupId>
-  <artifactId>fast-server</artifactId>
-  <version>1.0</version>
+    <groupId>io.github.gagechan</groupId>
+    <artifactId>fast-server</artifactId>
+    <version>1.0.3-RELEASE</version>
 </dependency>
 ```
 
@@ -84,7 +84,7 @@ mvn clean install -Dmaven.test.skip=true
 
 ## 更新记录
 
-### V1.0.0
+### V1.0.3-RELEASE
 
 * 基础功能建设
 
