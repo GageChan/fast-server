@@ -76,6 +76,12 @@ public class ExampleController extends AbstractController {
 | `web.http.template.prefix` |  template  |   模板资源前缀   |
 | `web.http.template.suffix` |    html    |   模板资源后缀   |
 
+## 源码构建
+
+```shell
+mvn clean install -Dmaven.test.skip=true
+```
+
 ## 更新记录
 
 ### V1.0.0
