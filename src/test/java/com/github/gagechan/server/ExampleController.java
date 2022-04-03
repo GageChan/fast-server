@@ -20,13 +20,13 @@ import lombok.extern.slf4j.Slf4j;
 @EnableIoc
 @Route(path = "/example")
 @Slf4j
-public class MainTest extends AbstractController {
+public class ExampleController extends AbstractController {
     /**
     * Run.
     */
     @Test
     void run() {
-        Main.run(MainTest.class);
+        Main.run(ExampleController.class);
     }
 
     // curl --location --request GET 'localhost:8000/example?name=gagechan'
@@ -46,7 +46,8 @@ public class MainTest extends AbstractController {
     //}'
     @Override
     public void doPost(HttpRequest request, HttpResponse response) {
-        String jsonStr = new String(request.getBody(), StandardCharsets.UTF_8);
+        byte[] requestBody = request.getBody();
+        String jsonStr = new String(requestBody, StandardCharsets.UTF_8);
         log.info("test post, jsonBody: {}", jsonStr);
         // render json
         response.buildJsonResponse(jsonStr);
