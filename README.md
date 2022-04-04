@@ -10,7 +10,7 @@
 <dependency>
     <groupId>io.github.gagechan</groupId>
     <artifactId>fast-server</artifactId>
-    <version>1.0.3-RELEASE</version>
+    <version>1.0.5-RELEASE</version>
 </dependency>
 ```
 
@@ -76,6 +76,26 @@ public class ExampleController extends AbstractController {
 | `web.http.template.prefix` |  template  |   模板资源前缀   |
 | `web.http.template.suffix` |    html    |   模板资源后缀   |
 
+## 响应渲染
+
+目前支持4种渲染方式
+
+* ```java
+  response.renderHtml(String htmlName) //模板渲染，渲染classpath:/temlate中的html页面。模板语法参考 apache velocity
+  ```
+
+* ```java
+  response.renderStatic(String path) //静态数据渲染，渲染classpath:/static中的静态资源
+  ```
+
+* ```java
+  response.renderJson(String json) //渲染json数据
+  ```
+
+* ```java
+  response.renderText(String text) //普通文本渲染
+  ```
+
 ## 源码构建
 
 ```shell
@@ -88,9 +108,16 @@ mvn clean install -Dmaven.test.skip=true
 
 * 基础功能建设
 
+### V1.0.5-RELEASE
+
+* 集成模板渲染引擎(velocity)
+* 因发布到maven仓库不允许采用com.github.xx作为artifactId,故包名变更(com.github.gagechan->io.github.gagechan)
+* 错误页面优化
+
 ## TODO
 
-- [ ] 集成模板引擎
+- [x] ~~集成模板引擎~~
+- [ ] 优化异常处理机制
 - [ ] 拦截器
 - [ ] Https的支持
 

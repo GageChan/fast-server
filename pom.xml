@@ -7,7 +7,7 @@
     <groupId>io.github.gagechan</groupId>
     <artifactId>fast-server</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.3-RELEASE</version>
+    <version>1.0.5-RELEASE</version>
 
     <name>FastServer</name>
     <description>一款基于Netty实现的高性能的Web应用服务器</description>
@@ -42,6 +42,7 @@
         <netty.version>4.1.56.Final</netty.version>
         <hutool.version>5.7.22</hutool.version>
         <junit.version>5.8.2</junit.version>
+        <velocity.version>2.3</velocity.version>
     </properties>
 
     <dependencies>
@@ -84,6 +85,14 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity-engine-core -->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity-engine-core</artifactId>
+            <version>${velocity.version}</version>
+        </dependency>
+
 
 
     </dependencies>
