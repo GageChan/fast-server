@@ -55,7 +55,7 @@ public class ExampleController extends AbstractController {
 
 ## IOC
 
-[FastServer](https://github.com/GageChan/fast-server.git)使用@Bean将类托管给容器管理，通过`XXX bean = BeanContainer.getBean(XXX.class)`获取容器中的bean。同时也提供了bean相关的扩展，用户可实现其接口完成自定义业务。
+[FastServer](https://github.com/GageChan/fast-server.git)使用@Bean将类托管给容器管理，通过`XXX bean = BeanContainer.getBean(XXX.class)`获取容器中的bean。同时也提供了bean相关的扩展，用户可实现其接口完成扩展业务。
 
 - `BeforeInitBean` bean初始化前的钩子函数。
 - `InitializedBean` bean初始化完成的钩子函数。
@@ -63,9 +63,9 @@ public class ExampleController extends AbstractController {
 
 ## 配置
 
-[FastServer](https://github.com/GageChan/fast-server.git)默认加载classpath下名为`application.properties`的文件，当然，用户也可自定义。
+[FastServer](https://github.com/GageChan/fast-server.git)配置默认加载`classpath:/application.properties`
 
-目前支持的配置有(后续可能会增加)：
+目前支持的配置有：
 
 |            名称            |   默认值   |       描述       |
 | :------------------------: | :--------: | :--------------: |
@@ -104,15 +104,15 @@ mvn clean install -Dmaven.test.skip=true
 
 ## 更新记录
 
-### V1.0.3-RELEASE
-
-* 基础功能建设
-
 ### V1.0.5-RELEASE
 
 * 集成模板渲染引擎(velocity)
 * 因发布到maven仓库不允许采用com.github.xx作为artifactId,故包名变更(com.github.gagechan->io.github.gagechan)
 * 错误页面优化
+
+### V1.0.3-RELEASE
+
+* 基础功能建设
 
 ## TODO
 
